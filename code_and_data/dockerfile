@@ -1,0 +1,11 @@
+FROM python:3
+
+LABEL maintainer="1875912440@qq.com"
+
+WORKDIR /core
+COPY . /core
+
+RUN pip install --no-cache-dir -r requirement.txt
+
+# CMD ["python", "new.py"]
+# CMD ["/bin/bash"]
