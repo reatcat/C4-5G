@@ -24,18 +24,15 @@ if __name__ == '__main__':
     print('数据内部清洗前长度为', len(data))
     # 清洗数据，按照时间，端口号等进行聚类
     data = dp.Datacluster(data,eps = 0.005)
-
-
     #  所有数据的clocationinfo信息列表locs，反索引列表locToIndexOflocs，loc对应的网元id、端口信息、定位信息列表locstoneid
     locs, locToIndexOflocs, locstoneid = dp.getContextofLocs(data)
-
-    # 保存反索引到文件
+    # 保存变量到文件
     with open("locs.pkl", "wb") as f:
         pickle.dump(locs, f)
+    with open("locToIndexOflocs.pkl", "wb") as f:
+        pickle.dump(locToIndexOflocs, f)
     ## 生成所有时间序列
     Seqs = dp.GenSeqs(data, 250)
-
-
     # 对序列进行字符串化,去除序列中每个项目集的重复项
     for i in range(len(Seqs)):
         for j in range(len(Seqs[i])):
