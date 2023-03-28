@@ -38,6 +38,10 @@ if __name__ == '__main__':
     p = model.predict(train,Seqs,5,15)
     result = ([locs[i] for i in itemset] for itemset in p)
     result_list = list(result)
+    count = 0
+
     for i in range(len(result_list)):
         for j in range(len(result_list[i])):
             print(result_list[i][j])
+            count+=1
+    print("一共产生了" + str(count) + "条关联告警")
