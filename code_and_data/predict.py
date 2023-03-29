@@ -11,7 +11,6 @@ from numpy import array
 import DataProcessing as dp
 
 
-
 if __name__ == '__main__':
     # 从文件中加载模型
     with open('model.pkl', 'rb') as f:
