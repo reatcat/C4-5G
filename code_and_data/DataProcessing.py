@@ -61,6 +61,21 @@ def getdataByalarmcode(data):
             dataByalarmcode[alarm[1]] = [alarm]
     return dataByalarmcode
 
+def getdataByalarmlevel(data):
+    '''
+        根据alarmlevel划分数据
+    '''
+    level0, level1, level2, level3 = 0, 0, 0, 0
+    for alarm in data:
+        if alarm[3] == 0:
+            level0+=1
+        elif alarm[3] == 1:
+            level1+=1
+        elif alarm[3] == 2:
+            level2+=1
+        else:
+            level3+=1
+    return level0,level1,level2,level3
 
 def getdataByloc(data):
     '''
