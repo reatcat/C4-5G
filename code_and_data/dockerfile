@@ -7,5 +7,5 @@ COPY . /core
 
 RUN pip install --no-cache-dir -r requirement.txt
 
-# CMD ["python", "train.py"]
+# CMD ["python", "Train.py"]
 # CMD ["/bin/bash"]
