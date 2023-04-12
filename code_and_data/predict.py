@@ -12,6 +12,9 @@ import DataProcessing as dp
 
 
 if __name__ == '__main__':
+    '''
+    接收的传入参数为告警的位置信息，输出得到的结果
+    '''
     # 从文件中加载模型
     with open('model.pkl', 'rb') as f:
         model = pickle.load(f)

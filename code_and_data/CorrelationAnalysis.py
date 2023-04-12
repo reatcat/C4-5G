@@ -12,8 +12,7 @@ from CPT import *
 import operator
 
 
-file_path = '.\\t_alarmlogcur.csv'
-output_path = '.\\output\\predict_rusult.csv'
+file_path = 't_alarmlogcur.csv'
 if __name__ == '__main__':
     # 数据输入
     data = dp.read_data(file_path)
@@ -24,6 +23,7 @@ if __name__ == '__main__':
     #  所有数据的clocationinfo信息列表locs，反索引列表locToIndexOflocs，loc对应的网元id、端口信息、定位信息列表locstoneid
     locs, locToIndexOflocs, locstoneid = dp.getContextofLocs(data)
     # 保存变量到文件
+    print("开始写文件")
     with open("locs.pkl", "wb") as f:
         pickle.dump(locs, f)
     with open("locToIndexOflocs.pkl", "wb") as f:
